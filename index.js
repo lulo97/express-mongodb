@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors'); // Import the cors middleware
 const User = require('./User.js')
 
 require("dotenv").config();
@@ -12,6 +13,7 @@ const connectDB = require("./mongoose.js");
 connectDB();
 
 app.use(bodyParser.json());
+app.use(cors()); // Use the cors middleware
 
 // Routes
 
